@@ -35,6 +35,8 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.staticfiles',
     'cars',
+    'core',
+    'auto_parks',
 ]
 
 MIDDLEWARE = [

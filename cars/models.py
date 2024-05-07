@@ -1,8 +1,14 @@
 from django.db import models
+from core.models import BaseModel
 
-class CarModel(models.Model):
-    brand = models.CharField(max_length=25)
+from auto_parks.models import AutoParkModel
+
+
+class CarModel(BaseModel):
+
+    brand = models.CharField(max_length=50)
+    price = models.IntegerField()
     year = models.IntegerField()
-    seats = models.IntegerField()
-    carBody = models.CharField(max_length=25, default='sedan')
+    body_type = models.CharField(max_length=50, default='Sedan')
     engine = models.FloatField()
+    auto_parks = models.ForeignKey(AutoParkModel, on_delete=models.CASCADE, related_name='cars', default=1)
